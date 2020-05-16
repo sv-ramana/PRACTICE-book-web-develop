@@ -1,0 +1,26 @@
+h2 {
+
+ 
+  position: relative;
+  left: 250px;
+  top: 250px;
+
+}
+p {
+  white-space: nowrap;
+  width: 200px;
+  border: 1px solid #000000;
+  overflow: hidden;
+  text-overflow: white-space;
+
+}
+/*p:hover {
+  overflow: visible;
+} */
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+}
