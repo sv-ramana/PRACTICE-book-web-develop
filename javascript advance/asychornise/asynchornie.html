@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head><title>asynchonous</title></head>
+<body>
+
+<h1>
+    Asynchronous JavaScript
+</h1>
+
+<script>
+
+
+// const second = function() {
+//     setTimeout(() =>{
+//         console.log('hey! im coming');
+//     }, 2000);
+// }
+// const first = function() {
+//     console.log('hai hello im sv ramana');
+//     second();
+//     console.log('the end');
+// }
+
+// first();
+///////////////////////////////////////////
+// function receipies(){
+//     setTimeout(() => {
+//         const recep1 = [223, 334, 445, 556, 667];
+//         console.log(recep1);
+//         setTimeout(id => {
+//             const recep2 = {title: 'tomoto rice', publisher: 'venkat'};
+//             console.log(`${recep2.title}: and publisher ${recep2.publisher}`);
+//             setTimeout(publisher => {
+//                 const recep3 ={title: 'KFC buckets', publisher: 'venky'};
+//                 console.log(`${recep3.title}: and publisher ${recep3.publisher}`);
+
+//             }, 1500, recep2.publisher);
+//         }, 1500, recep1[3]);
+//     }, 1500);
+// }
+
+// receipies();
+
+/////////////////////////////////////////////
+// promise will succesfull if event happens [resove or reject may occur] //
+const getsomestuff = new Promise((resolve, reject) => {
+    setTimeout(() =>{
+
+        resolve([233, 344, 566, 677, 899]);
+        // reject([11, 12, 13, 14, 15]);
+
+    }, 1500);
+
+});
+
+const getrecep = recid => {
+    return new Promise((resolve, reject) => {
+        setTimeout(sum => {
+            const recep2 = {title: 'tomoto pizza', publisher: 'venkat'};
+          resolve(`${recep2.title}: and publisher ${recep2.publisher}`);
+        //   reject(`${recep2.title}: and publisher ${recep2.publisher}`);
+
+        }, 1500, recid);
+
+    });
+};
+
+
+const getreleted = relatid => {
+    return new Promise((resolve, reject) =>{
+        setTimeout(rel =>{
+         const recep3 ={title: 'KFC buckets', publisher: 'venky'};
+         resolve(`${recep3.title}: and publisher ${recep3.publisher}`);
+
+        }, 1500, relatid);
+    });
+}
+
+////////////////  PROMISES   /////////////
+
+// getsomestuff
+// .then(ids => {
+//     console.log(ids);
+//    return getrecep('fgfc');
+// })
+// .then(recep2 => {
+//     console.log(recep2);
+//     return getreleted('venky');
+// })
+// .then(recep3 => {
+//     console.log(recep3);
+// })
+
+// .catch(error => {
+//     console.log('O my god error!');
+// });
+
+///////////////// asynchornic javascript ////////
+
+// async function getrecepesofall() {
+//         const first = await getsomestuff;
+//         console.log(first);
+        
+//         const third = await getreleted(getsomestuff[2]);
+//         console.log(third);
+
+//         const second = await getrecep('hgv');
+//         console.log(second);
+
+//         return second;
+// }
+
+// getrecepesofall().then(result => console.log(`${result} ia best of all`));
+
+
+//////////   AJAX API FETCH AND PROMMISES //////////
+
+// function getweather() {
+// fetch
+// (https://crossorigin.me/https://www.metaweather.com/api/location/2295414/)
+// .then(result => {
+//     console.log(result);
+//     return result.json();
+// });
+// .then(data => {
+//     const today = data.consolidated_weather[0];
+//     console.log(`teamperature in ${data.title} stay between ${today.min_temp} and ${today.max_temp});
+
+// })
+// .catch(error => {
+//     console.log(error);
+// })
+// }
+
+// getweather();
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
